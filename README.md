@@ -37,7 +37,6 @@ records:
 
 To understand this, the `record` does a step that "Click on the Search button, and input 'Clock' into it". What's more, if there is no input, the `input` will be set to `null`.
 
-> The `state_str` was deprecated. You just need to use the new one to match the states.
 
 ## utgs
 
@@ -54,10 +53,27 @@ utgs
 │   └── utg.yaml
 ```
 
-You should pay attention to the `states` folder, which contains all the states for the `task.yaml` and `utg.yaml`. 
+### States & UI Tree Matching
 
-You can find a descriptive `.json` file and corresponding screenshot `.png` file for further usage.
+If you want to use a new form instead of the provided `HTML` in our `.yaml`, you can use `new_state_str` to find a corresponding source state file in the `states` folder.
+
+> The `state_str` was deprecated. You just need to use `new_state_str` to match the states.
+
+In the `states` folder, there are pairs of `.json`(states) and `.png`(screenshot), named in the form of timestamps. Below is an example of the `.json` file:
+
+```json
+{
+  "tag": "2023-07-08_212539",
+  "state_str": "f8ad670e9a731699680252f02c59a057647e07cd5290c9cc4cb69554d0285bd9",
+  "views":[
+    ...
+  ],
+  ...
+}
+```
+
+Here lists several important keys only. Notice that, the `new_state_str` can be mapped to the only state by the key `state_str` in the `.json` file. Another important key is `views`. Inside this there is a **complete raw UI tree** of the current screen, through which you can process to the form you want.
 
 ## More details
 
-For more details, please get access to our [homepage](https://autodroid-sys.github.io) and [paper](https://arxiv.org/abs/2308.15272); 
+For more details, please get access to our [homepage](https://autodroid-sys.github.io) and [paper](https://arxiv.org/abs/2308.15272).
