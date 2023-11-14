@@ -57,8 +57,6 @@ utgs
 
 If you want to use a new form instead of the provided `HTML` in our `.yaml`, you can use `new_state_str` to find a corresponding source state file in the `states` folder.
 
-> The `state_str` was deprecated. You just need to use `new_state_str` to match the states.
-
 In the `states` folder, there are pairs of `.json`(states) and `.png`(screenshot), named in the form of timestamps. Below is an example of the `.json` file:
 
 ```json
